@@ -1,0 +1,72 @@
+<template name="main">
+  <header class="landing">
+    <div class="header"></div>
+    <div class="header_title">
+      <center>
+        <h1 style="font-size: 68px;">Rate</h1>
+        <h1 style="font-size: 44px;">An Experiment about Judgement</h1>
+      </center>
+    </div>
+    <div class="header_btns">
+      <div class="more_btn">
+        <button class="participate">Learn More</button>
+      </div>
+      <div class="part_btn">
+        <button class="participate">Participate</button>
+      </div>
+    </div>
+  </header>
+  {{> steps}}
+</template>
+
+<template name="steps">
+  <section class="editor">
+    <div class="editor_step">
+      <div class="step_1">
+        <h1 class="step_1title"><button class="step_1btn">1</button> Edit</h1>
+        <h1 class="step_1desc">Edit and improve the text to your right. You have complete editorial freedom. <br><br>Just keep in mind that others will judge your edits for its quality.</h1>
+      </div>
+      <div class='app'>
+        <div class='top'>
+          <div class='buttons'>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+          </div>
+          <div class='title'>
+            Untitled.txt
+          </div>
+          <div class='info'>
+            Edit
+          </div>
+          <div class='clear'></div>
+        </div>
+        <div class='main'>
+          <p class='words'>{{count_words}} words</p>
+          <div id="content" class='content' contentEditable="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></div>
+        </div>
+      </div>
+    </div>
+    <div class="rate_self">
+      <div class="step_1">
+        <h1 class="step_1title"><button class="step_1btn">2</button> Rate</h1>
+        <h1 class="step_1desc">Rate and judge how good your edits are compared to the original text. Be honest and objective.</h1>
+      </div>
+      <div class="rating">
+        <div class="tiles">
+          <div id="tile">
+            {{rate_tile}}
+            <div class="tile no_changes"><i class="tile_icon fa fa-frown-o fa-5x"></i><h1>No Changes</h1></div>
+          </div>
+          <div class="rate_count">
+            <h1>Rating: <span id="value">0.00</span></h1>
+          </div>
+        </div>
+        <div id="rate_slider"></div>
+      </div>
+    </div>
+    <div class="submit">
+      <div><center><button class="submit_btn">Submit</button></center></div>
+    </div>
+  </section>
+</template>
